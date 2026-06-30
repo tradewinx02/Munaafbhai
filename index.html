@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Premium Trading Community - 94% Win Rate with 6000+ Active Traders">
+    <title>Munaf Trading - Elite Trading Community</title>
+    
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '997816049561584');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=997816049561584&ev=PageView&noscript=1"/>
+    </noscript>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
+        
+        body {
+            background: radial-gradient(circle at 20% 30%, #0a0f1a, #06090f);
+            font-family: 'Segoe UI', 'Poppins', system-ui, -apple-system, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 10px;
+        }
+        
+        /* Container - Responsive */
+        .container {
+            max-width: 420px;
+            width: 100%;
+            margin: 0 auto;
+            background: rgba(12, 18, 28, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 48px;
+            padding: clamp(18px, 5vw, 25px);
+            border: 1px solid rgba(0, 200, 255, 0.25);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(0,200,255,0.1);
+            animation: slideUp 0.6s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Neon Glow Animation */
+        @keyframes neonPulse {
+            0% { border-color: rgba(0, 200, 255, 0.2); box-shadow: 0 0 0px rgba(0,200,255,0); }
+            50% { border-color: rgba(0, 200, 255, 0.6); box-shadow: 0 0 18px rgba(0,200,255,0.2); }
+            100% { border-color: rgba(0, 200, 255, 0.2); box-shadow: 0 0 0px rgba(0,200,255,0); }
+        }
+        
+        .neon-border {
+            animation: neonPulse 2.5s ease-in-out infinite;
+        }
+        
+        /* Photo - Circular Responsive */
+        .photo-top {
+            display: flex;
+            justify-content: center;
+            margin-bottom: clamp(10px, 3vw, 15px);
+        }
+        
+        .profile-img {
+            width: clamp(75px, 20vw, 90px);
+            height: clamp(75px, 20vw, 90px);
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2.5px solid #00D4FF;
+            box-shadow: 0 0 15px rgba(0,212,255,0.4);
+        }
+        
+        /* Brand Section */
+        .brand {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        
+        .brand h1 {
+            font-size: clamp(24px, 6vw, 32px);
+            font-weight: 800;
+            background: linear-gradient(135deg, #00D4FF, #0088FF);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+            margin-bottom: 2px;
+        }
+        
+        .brand p {
+            color: #6a7c9e;
+            font-size: clamp(9px, 2vw, 11px);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        /* Hero Section */
+        .hero-compact {
+            background: linear-gradient(135deg, #0f1626, #0a0f1c);
+            border-radius: 28px;
+            padding: clamp(12px, 4vw, 18px);
+            text-align: center;
+            margin: 12px 0;
+            border: 1px solid rgba(0,212,255,0.2);
+        }
+        
+        .hero-compact h2 {
+            font-size: clamp(18px, 5vw, 26px);
+            color: #00D4FF;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        
+        .hero-compact p {
+            font-size: clamp(10px, 2.5vw, 13px);
+            color: #8a9abb;
+            margin-bottom: 10px;
+        }
+        
+        /* Stats Row - Responsive */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(8px, 2vw, 12px);
+            margin: 14px 0;
+        }
+        
+        .stat-box {
+            background: rgba(0,212,255,0.06);
+            border-radius: 20px;
+            padding: clamp(8px, 2vw, 12px) 6px;
+            text-align: center;
+            border: 1px solid rgba(0,212,255,0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-box:hover {
+            background: rgba(0,212,255,0.1);
+            border-color: rgba(0,212,255,0.4);
+            transform: translateY(-2px);
+        }
+        
+        .stat-number {
+            font-size: clamp(18px, 4vw, 24px);
+            font-weight: 800;
+            color: #00D4FF;
+        }
+        
+        .stat-label {
+            font-size: clamp(7px, 1.5vw, 9px);
+            color: #7a8aba;
+            margin-top: 4px;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Features Grid - Responsive */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: clamp(8px, 2.5vw, 12px);
+            margin: 12px 0;
+        }
+        
+        .feature {
+            background: rgba(255,255,255,0.02);
+            border-radius: 20px;
+            padding: clamp(10px, 2.5vw, 14px);
+            text-align: center;
+            border: 1px solid rgba(0,212,255,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .feature:hover {
+            border-color: #00D4FF;
+            background: rgba(0,212,255,0.08);
+            transform: translateY(-3px);
+        }
+        
+        .feature-icon {
+            font-size: clamp(24px, 6vw, 32px);
+            margin-bottom: 6px;
+        }
+        
+        .feature h4 {
+            font-size: clamp(12px, 3vw, 14px);
+            color: #00D4FF;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .feature p {
+            font-size: clamp(8px, 1.8vw, 10px);
+            color: #8a9abb;
+        }
+        
+        /* CTA Buttons */
+        .cta-primary {
+            width: 100%;
+            background: linear-gradient(95deg, #00AAFF, #0088DD);
+            border: none;
+            padding: clamp(11px, 3vw, 14px) 16px;
+            border-radius: 50px;
+            color: white;
+            font-size: clamp(13px, 3vw, 16px);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            margin: 12px 0 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0,170,255,0.3);
+            font-family: inherit;
+        }
+        
+        .cta-primary:hover {
+            transform: scale(1.02);
+            background: linear-gradient(95deg, #00BBFF, #0099EE);
+            box-shadow: 0 8px 20px rgba(0,170,255,0.4);
+        }
+        
+        .cta-primary:active {
+            transform: scale(0.98);
+        }
+        
+        .cta-outline {
+            width: 100%;
+            background: transparent;
+            border: 1.5px solid #00D4FF;
+            padding: clamp(10px, 2.5vw, 12px) 16px;
+            border-radius: 50px;
+            color: #00D4FF;
+            font-size: clamp(12px, 2.8vw, 14px);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 6px 0;
+            font-family: inherit;
+        }
+        
+        .cta-outline:hover {
+            background: rgba(0,212,255,0.1);
+            transform: scale(1.02);
+        }
+        
+        .cta-outline:active {
+            transform: scale(0.98);
+        }
+        
+        /* Trust Badge */
+        .trust-badge {
+            text-align: center;
+            margin: 12px 0 8px;
+            padding: 8px;
+            background: rgba(0,212,255,0.04);
+            border-radius: 30px;
+        }
+        
+        .trust-badge p {
+            font-size: clamp(7px, 1.5vw, 9px);
+            color: #5a6e92;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        
+        .trust-icons {
+            display: flex;
+            justify-content: center;
+            gap: clamp(10px, 3vw, 15px);
+            flex-wrap: wrap;
+        }
+        
+        .trust-icons span {
+            font-size: clamp(7px, 1.5vw, 9px);
+            color: #00D4FF;
+            white-space: nowrap;
+        }
+        
+        /* Divider */
+        .divider-light {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #00D4FF, transparent);
+            margin: 10px 0;
+        }
+        
+        /* Disclaimer Section */
+        .disclaimer-section {
+            background: rgba(0,212,255,0.04);
+            border: 1px solid rgba(0,212,255,0.15);
+            border-radius: 18px;
+            padding: clamp(10px, 2.5vw, 14px);
+            margin: 10px 0;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+        
+        .disclaimer-section h5 {
+            font-size: clamp(10px, 2vw, 12px);
+            color: #FF6B6B;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+        
+        .disclaimer-section p {
+            font-size: clamp(7px, 1.5vw, 9px);
+            color: #8a9abb;
+            line-height: 1.4;
+            margin-bottom: 4px;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 10px;
+            padding-top: 8px;
+            border-top: 1px solid rgba(0,212,255,0.1);
+        }
+        
+        .footer p {
+            font-size: clamp(7px, 1.5vw, 9px);
+            color: #4a5a7a;
+            margin-bottom: 3px;
+        }
+        
+        .powered-by {
+            font-size: clamp(7px, 1.5vw, 8px);
+            color: #00D4FF;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Loading Indicator */
+        .loading-spinner {
+            display: none;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top: 2px solid white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                border-radius: 40px;
+                padding: 15px;
+            }
+        }
+        
+        @media (min-width: 481px) and (max-width: 768px) {
+            .container {
+                max-width: 450px;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .container {
+                max-width: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container neon-border">
+    
+    <!-- Profile Photo -->
+    <div class="photo-top">
+        <img src="https://i.ibb.co/4Z5yRcpM/Save-Clip-App-683791455-18101229124843484-5831550640518447928-n.jpg" alt="Munaf" class="profile-img">
+    </div>
+    
+    <!-- Brand -->
+    <div class="brand">
+        <h1>⚡ MUNAF</h1>
+        <p>PREMIUM TRADING</p>
+    </div>
+    
+    <!-- Hero Section -->
+    <div class="hero-compact">
+        <h2>Trade Smart, Win Big</h2>
+        <p>Serious traders only • High accuracy signals</p>
+        <button class="cta-primary" id="btnHero" data-section="hero">
+            <span class="loading-spinner" id="spinner1"></span>
+             JOIN TELEGRAM
+        </button>
+    </div>
+    
+    <!-- Stats -->
+    <div class="stats-row">
+        <div class="stat-box">
+            <div class="stat-number">94%</div>
+            <div class="stat-label">WIN RATE</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number">6K+</div>
+            <div class="stat-label">TRADERS</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">COVERAGE</div>
+        </div>
+    </div>
+    
+    <!-- Features -->
+    <div class="feature-grid">
+        <div class="feature">
+            <div class="feature-icon">📈</div>
+            <h4>Market Insights</h4>
+            <p>Real-time analysis</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">📚</div>
+            <h4>Education</h4>
+            <p>Complete training</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">💎</div>
+            <h4>Premium Setup</h4>
+            <p>Profitable signals</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🎯</div>
+            <h4>Consistency</h4>
+            <p>Daily updates</p>
+        </div>
+    </div>
+    
+    <!-- Divider -->
+    <div class="divider-light"></div>
+    
+    <!-- CTA Button 2 -->
+    <button class="cta-outline" id="btnFooter" data-section="footer">
+        <span class="loading-spinner" id="spinner2"></span>
+         JOIN CHANNEL
+    </button>
+    
+    <!-- Trust Badge -->
+    <div class="trust-badge">
+        <p>🔒 5+ YEARS • 1000+ SIGNALS</p>
+        <div class="trust-icons">
+            <span>✓ VERIFIED</span>
+            <span>✓ TRUSTED</span>
+            <span>✓ PROVEN</span>
+        </div>
+    </div>
+    
+    <!-- Trading Disclaimer -->
+    <div class="disclaimer-section">
+        <h5>⚠️ Risk Disclaimer</h5>
+        <p>• Trading and cryptocurrency involve significant financial risks. Past performance is not indicative of future results.</p>
+        <p>• You may lose all or part of your investment. Trade only with money you can afford to lose.</p>
+        <p>• This is educational content only. Not financial advice. Do your own research (DYOR).</p>
+        <p>• Markets are volatile. Use proper risk management and stop losses.</p>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2026 MUNAF • Premium Trading Community</p>
+        <p class="powered-by">Powered by @adbagency</p>
+    </div>
+    
+</div>
+
+<script>
+    // Configuration
+    const CONFIG = {
+        TELEGRAM_URL: 'https://t.me/+u0RkKAmv_xg0ODE1',
+        BACKEND_URL: 'https://your-backend-url.com', // Replace with your backend
+        PIXEL_ID: '997816049561584'
+    };
+    
+    // Track Events - Browser Side (Facebook Pixel)
+    function trackPixel(eventName, eventData = {}) {
+        if (typeof fbq === 'function') {
+            fbq('track', eventName, eventData);
+            console.log('✅ Pixel tracked:', eventName);
+        }
+    }
+    
+    // Track Events - Server Side
+    async function trackServer(buttonSection, eventType = 'Lead') {
+        try {
+            const response = await fetch(`${CONFIG.BACKEND_URL}/api/track`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    eventType: eventType,
+                    buttonSection: buttonSection,
+                    pixelId: CONFIG.PIXEL_ID,
+                    timestamp: new Date().toISOString(),
+                    userAgent: navigator.userAgent,
+                    referrer: document.referrer,
+                    pageUrl: window.location.href
+                })
+            });
+            
+            const data = await response.json();
+            console.log('✅ Server tracked:', data);
+            return data;
+        } catch (error) {
+            console.error('⚠️ Server tracking error:', error);
+        }
+    }
+    
+    // Handle Button Click
+    async function handleButtonClick(event) {
+        const button = event.currentTarget;
+        const section = button.getAttribute('data-section');
+        const spinner = button.querySelector('.loading-spinner');
+        
+        // Show loading spinner
+        if (spinner) {
+            spinner.style.display = 'block';
+            button.disabled = true;
+        }
+        
+        // Track on Browser (Facebook Pixel)
+        trackPixel('Lead', {
+            content_name: 'Telegram Join',
+            content_category: 'Elite Trading Community',
+            value: 1,
+            currency: 'USD'
+        });
+        
+        // Track on Server
+        await trackServer(section, 'TelegramClick');
+        
+        // Small delay for tracking
+        setTimeout(() => {
+            window.open(CONFIG.TELEGRAM_URL, '_blank');
+            
+            if (spinner) {
+                spinner.style.display = 'none';
+                button.disabled = false;
+            }
+        }, 300);
+    }
+    
+    // Attach Event Listeners
+    document.addEventListener('DOMContentLoaded', function() {
+        const heroBtn = document.getElementById('btnHero');
+        const footerBtn = document.getElementById('btnFooter');
+        
+        if (heroBtn) {
+            heroBtn.addEventListener('click', handleButtonClick);
+            console.log('✅ Hero button tracking attached');
+        }
+        
+        if (footerBtn) {
+            footerBtn.addEventListener('click', handleButtonClick);
+            console.log('✅ Footer button tracking attached');
+        }
+        
+        // Page load tracking
+        trackPixel('ViewContent', {
+            content_name: 'Landing Page',
+            content_category: 'Trading Community'
+        });
+        
+        trackServer('page', 'PageLoad');
+    });
+</script>
+
+</body>
+</html>
