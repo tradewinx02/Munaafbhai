@@ -29,6 +29,5 @@
   },
   "buildCommand": "npm install",
   "outputDirectory": ".",
-  "public": false,
   "regions": ["iad1"]
 }
